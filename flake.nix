@@ -25,21 +25,23 @@
       # For more information https://nixos.wiki/wiki/Qt
       packages = with pkgs; [
         python3
-        jetbrains.pycharm-community-bin
+        jetbrains.pycharm-oss
         python312Packages.pyqt5
         python312Packages.pyyaml
         python312Packages.sip
         python312Packages.tkinter
         xorg.libxcb
         qt5.wrapQtAppsHook
-        qt5.full
+        qt5.qtbase
+        qt5.qttools
+        qt5.qtsvg
         #qtcreator
       ];
 
       shellHook = ''
         echo "Entering Python 3 development environment"
         echo "To find python3 binary, type 'whereis python3' or 'which python3'"
-        echo "Type 'pycharm-community&' to open PyCharm or 'designer&' to open QT Designer to develop GUI"
+        echo "Type 'pycharm-oss&' to open PyCharm or 'designer&' to open QT Designer to develop GUI"
         echo "If you want to exit this environment, type exit"
       '';
     };
